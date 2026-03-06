@@ -11,6 +11,7 @@ namespace eru
 namespace mgm
 {
    Magma::Magma(std::span<char const* const> const)
+      : Application{ "Magma" }
    {
       window_.change_extent({ 1280, 720 });
       window_.change_visibility(true);
