@@ -19,6 +19,9 @@ namespace mgm
 
          [[nodiscard]] virtual bool tick() override;
          [[nodiscard]] virtual bool process_event(SDL_Event& event) override;
+
+      private:
+         eru::Window& window_{ eru::Locator::get<eru::Window>() };
    };
 }
 
