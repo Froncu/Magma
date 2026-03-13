@@ -1,26 +1,9 @@
 {
-   "version" : 3,
-   "configurePresets" : [
+   "version": 3,
+   "configurePresets": [
       {
-         "name" : "default",
-         "generator" : "Ninja Multi-Config",
-         "binaryDir" : "${sourceDir}/build/${presetName}",
-         "toolchainFile" : "${sourceDir}/eruptor/vcpkg/scripts/buildsystems/vcpkg.cmake",
-         "cacheVariables" : {
-            "VCPKG_MANIFEST_DIR" : "${sourceDir}/eruptor"
-         }
-      }
-   ],
-   "buildPresets" : [
-      {
-         "name" : "debug",
-         "configurePreset" : "default",
-         "configuration" : "Debug"
-      },
-      {
-         "name" : "release",
-         "configurePreset" : "default",
-         "configuration" : "Release"
+         "name": "default",
+         "binaryDir": "${sourceDir}/build/${presetName}"
       }
    ]
 }
