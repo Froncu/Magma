@@ -11,14 +11,12 @@ target_include_directories(${PROJECT_NAME}
    PRIVATE source)
 
 target_link_libraries(${PROJECT_NAME}
-   PRIVATE $<$<BOOL:${MINGW}>:mingw32>)
-
-target_link_libraries(${PROJECT_NAME}
    PRIVATE eruptor_entry)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
    CXX_STANDARD 23
-   CXX_STANDARD_REQUIRED TRUE)
+   CXX_STANDARD_REQUIRED TRUE
+   LINK_DEPENDS $<TARGET_FILE:eruptor>)
 
 target_compile_options(${PROJECT_NAME}
    PRIVATE $<$<CXX_COMPILER_ID:GNU,Clang>:-Wall -Wextra -Wpedantic -Werror>
