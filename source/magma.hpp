@@ -20,7 +20,7 @@ namespace mgm
          [[nodiscard]] virtual bool tick() override;
 
       private:
-         eru::Window& window_{ eru::Locator::get<eru::Window>() };
+         eru::Window window_{ { 1280, 720 }, "Magma" };
    };
 }
 
