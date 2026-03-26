@@ -22,10 +22,14 @@ target_compile_options(${PROJECT_NAME}
    PRIVATE $<$<CXX_COMPILER_ID:GNU,Clang>:-Wall -Wextra -Wpedantic -Werror>
    PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/W4 /WX>)
 
-if(ERU_BUILD_SHARED)
-   add_custom_command(TARGET ${PROJECT_NAME}
-      POST_BUILD COMMAND
-      ${CMAKE_COMMAND} -E copy_if_different
-      $<TARGET_FILE:eruptor>
-      $<TARGET_FILE_DIR:${PROJECT_NAME}>)
-endif()
+add_custom_command(TARGET ${PROJECT_NAME}
+   POST_BUILD COMMAND
+   ${CMAKE_COMMAND} -E copy_if_different
+   $<TARGET_RUNTIME_DLLS:${PROJECT_NAME}>
+   $<TARGET_FILE_DIR:${PROJECT_NAME}>
+   COMMAND_EXPAND_LISTS)
+
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+   COMMAND ${CMAKE_COMMAND} -E copy_directory_if_different
+   ${CMAKE_SOURCE_DIR}/assets
+   $<TARGET_FILE_DIR:${PROJECT_NAME}>/assets)
