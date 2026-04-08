@@ -7,7 +7,8 @@
          "binaryDir" : "${sourceDir}/build/${presetName}",
          "toolchainFile" : "${sourceDir}/eruptor/vcpkg/scripts/buildsystems/vcpkg.cmake",
          "cacheVariables" : {
-            "VCPKG_MANIFEST_DIR" : "${sourceDir}/eruptor"
+            "VCPKG_MANIFEST_DIR" : "${sourceDir}/eruptor",
+            "ERU_BUILD_SHARED" : true
          }
       }
    ],

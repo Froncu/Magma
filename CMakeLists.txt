@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 project(magma)
 
-set(ERU_BUILD_SHARED true)
 add_subdirectory(eruptor)
 
 add_executable(${PROJECT_NAME}
