@@ -6,5 +6,5 @@
 
 !.gitignore
 !.gitmodules
-!CMakePresets.json
 !CMakeLists.txt
+!CMakePresets.json

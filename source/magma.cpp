@@ -14,9 +14,4 @@ namespace mgm
       : Application{ "Magma" }
    {
    }
-
-   bool Magma::tick()
-   {
-      return true;
-   }
 }

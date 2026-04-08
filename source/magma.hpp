@@ -16,11 +16,6 @@ namespace mgm
 
          Magma& operator=(Magma const&) = delete;
          Magma& operator=(Magma&&) noexcept = delete;
-
-         [[nodiscard]] virtual bool tick() override;
-
-      private:
-         eru::Window window_{ { 1280, 720 }, "Magma" };
    };
 }
 
