@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.19)
 project(magma)
 
 add_subdirectory(eruptor)
@@ -28,7 +28,9 @@ add_custom_command(TARGET ${PROJECT_NAME}
    $<TARGET_FILE_DIR:${PROJECT_NAME}>
    COMMAND_EXPAND_LISTS)
 
-add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+add_custom_target(copy_assets ALL
    COMMAND ${CMAKE_COMMAND} -E copy_directory_if_different
    ${CMAKE_SOURCE_DIR}/assets
    $<TARGET_FILE_DIR:${PROJECT_NAME}>/assets)
+
+add_dependencies(${PROJECT_NAME} copy_assets)
