@@ -12,10 +12,10 @@ namespace mgm
          Magma(Magma const&) = delete;
          Magma(Magma&&) noexcept = delete;
 
-         virtual ~Magma() override = default;
+         ~Magma() override = default;
 
-         Magma& operator=(Magma const&) = delete;
-         Magma& operator=(Magma&&) noexcept = delete;
+         auto operator=(Magma const&) -> Magma& = delete;
+         auto operator=(Magma&&) noexcept -> Magma& = delete;
    };
 }
 

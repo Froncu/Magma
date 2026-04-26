@@ -2,7 +2,7 @@
 
 namespace eru
 {
-   std::unique_ptr<Application> create_application(std::span<char const* const> const arguments)
+   auto create_application(std::span<char const* const> const arguments) -> std::unique_ptr<Application>
    {
       return std::make_unique<mgm::Magma>(arguments);
    }
