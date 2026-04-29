@@ -2,16 +2,16 @@
 
 namespace eru
 {
-   auto create_application(std::span<char const* const> const arguments) -> std::unique_ptr<Application>
+   auto create_application(std::span<char const* const> const) -> void
    {
-      return std::make_unique<mgm::Magma>(arguments);
+      Locator::provide<Application, mgm::Magma>();
    }
 }
 
 namespace mgm
 {
-   Magma::Magma(std::span<char const* const> const)
-      : Application{ "Magma" }
+   Magma::Magma(eru::Locator::ConstructionKey const construction_key)
+      : Application{ construction_key, "Magma" }
    {
    }
 }

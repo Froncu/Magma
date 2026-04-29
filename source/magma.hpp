@@ -8,7 +8,7 @@ namespace mgm
    class Magma final : public eru::Application
    {
       public:
-         explicit Magma(std::span<char const* const> arguments);
+         explicit Magma(eru::Locator::ConstructionKey);
          Magma(Magma const&) = delete;
          Magma(Magma&&) noexcept = delete;
 
