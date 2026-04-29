@@ -2,7 +2,7 @@
 
 namespace eru
 {
-   auto create_application(std::span<char const* const> const) -> void
+   auto provide_application(std::span<char const* const> const) -> void
    {
       Locator::provide<Application, mgm::Magma>();
    }
@@ -10,8 +10,14 @@ namespace eru
 
 namespace mgm
 {
-   Magma::Magma(eru::Locator::ConstructionKey const construction_key)
-      : Application{ construction_key, "Magma" }
+   Magma::Magma(eru::PassKey<eru::Locator> const construction_key)
+      : Application{ construction_key }
    {
+   }
+
+   auto Magma::tick() -> bool
+   {
+      platform_.poll();
+      return true;
    }
 }
