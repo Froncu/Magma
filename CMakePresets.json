@@ -5,9 +5,9 @@
          "name": "vcpkg",
          "generator": "Ninja",
          "binaryDir": "${sourceDir}/build/${presetName}",
-         "toolchainFile": "${sourceDir}/eruptor/vcpkg/scripts/buildsystems/vcpkg.cmake",
+         "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
          "cacheVariables": {
-            "VCPKG_MANIFEST_DIR": "${sourceDir}/eruptor"
+            "VCPKG_MANIFEST_DIR": "${sourceDir}"
          }
       }
    ]

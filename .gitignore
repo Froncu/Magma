@@ -1,10 +1,11 @@
 /*
 
 !assets
-!eruptor
 !source
+!vcpkg
 
 !.gitignore
 !.gitmodules
 !CMakeLists.txt
 !CMakePresets.json
+!vcpkg.json

@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.19)
 project(magma)
 
-add_subdirectory(eruptor)
-
 add_executable(${PROJECT_NAME}
    source/magma.cpp)
 
@@ -10,12 +8,12 @@ target_include_directories(${PROJECT_NAME}
    PRIVATE source)
 
 target_link_libraries(${PROJECT_NAME}
-   PRIVATE eruptor_entry)
+   PRIVATE eru::entry)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
    CXX_STANDARD 23
    CXX_STANDARD_REQUIRED TRUE
-   LINK_DEPENDS $<TARGET_FILE:eruptor>)
+   LINK_DEPENDS $<TARGET_FILE:eru::eruptor>)
 
 target_compile_options(${PROJECT_NAME}
    PRIVATE $<$<CXX_COMPILER_ID:GNU,Clang>:-Wall -Wextra -Wpedantic -Werror -Wno-braced-scalar-init>
